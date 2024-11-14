@@ -1,0 +1,130 @@
+/* Importation des polices Google pour les utiliser sur la page */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Définition des variables CSS dans l'élément racine */
+:root{
+    --main-color: #8e44ad; /* Couleur principale utilisée pour les accents */
+    --black: #222; /* Couleur noire pour le texte et les bordures */
+    --white: #fff; /* Couleur blanche pour les fonds et les textes */
+    --light-black: #777; /* Noir clair pour les textes et les détails */
+    --light-white: #fff9; /* Blanc clair avec opacité pour les effets */
+    --dark-bg: #eee; /* Couleur de fond sombre pour les sections */
+    --border: .1rem solid var(--black); /* Définition d'une bordure fine et solide */
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,.1); /* Ombre portée légère pour les éléments */
+    --text-shadow: 0 .5rem 1rem rgba(0,0,0,.3); /* Ombre de texte légère pour les titres */
+}
+
+/* Style universel appliqué à tous les éléments */
+*{
+    font-family: 'Poppins', sans-serif; /* Utilisation de la police Poppins */
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les espacements intérieurs par défaut */
+    box-sizing: border-box; /* Inclut la bordure et le padding dans la largeur totale des éléments */
+    outline: none; /* Supprime les contours par défaut lors de la sélection */
+    border: none; /* Supprime les bordures par défaut */
+    text-decoration: none; /* Supprime les décorations de texte (comme les soulignements) */
+    text-transform: capitalize; /* Met en majuscule la première lettre de chaque mot */
+}
+
+/* Style appliqué à l'élément html */
+html{
+    font-size: 62.5%; /* Définit la taille de la police à 62.5% pour que 1rem = 10px */
+    overflow-x: hidden; /* Cache tout débordement horizontal */
+}
+
+/* Personnalisation de la barre de défilement pour les navigateurs WebKit */
+html::-webkit-scrollbar{
+    width: 1rem; /* Définit la largeur de la barre de défilement à 1rem */
+}
+html::-webkit-scrollbar-track{
+    background-color: var(--white); /* Couleur de fond de la piste de la barre de défilement */
+}
+html::-webkit-scrollbar-thumb{
+    background-color: var(--main-color); /* Couleur de la poignée de la barre de défilement */
+}
+
+/* Style appliqué aux sections */
+section{
+    padding: 5rem 10%; /* Ajoute un padding (espace intérieur) de 5rem en haut et en bas, et de 10rem à gauche et à droite */
+}
+
+/* Style du header */
+.header{
+    position: sticky; /* Rend le header collant pour qu'il reste en haut lors du défilement */
+    top: 0; left: 0; right: 0; /* Fixe le header en haut, à gauche et à droite */
+    z-index: 1000; /* Assure que le header est au-dessus des autres éléments */
+    background-color: var(--white); /* Couleur de fond blanche */
+    display: flex; /* Utilise Flexbox pour aligner les éléments */
+    padding-top: 2rem; padding-bottom: 2rem; /* Ajoute un padding en haut et en bas */
+    box-shadow: var(--box-shadow); /* Ajoute une ombre portée définie par la variable */
+    align-items: center; /* Centre les éléments verticalement */
+    justify-content: space-between; /* Espace les éléments horizontalement */
+}
+
+/* Style du logo dans le header */
+.header .logo{
+    font-size: 2.5rem; /* Taille de police de 2.5rem */
+    color: var(--black); /* Couleur noire pour le logo */
+}
+
+/* Style des liens de la barre de navigation dans le header */
+.header .navbar a{
+    font-size: 2rem; /* Taille de police de 2rem */
+    margin-left: 2rem; /* Ajoute une marge à gauche de 2rem */
+    color: var(--black); /* Couleur noire pour les liens */
+}
+
+/* Style des liens de la barre de navigation au survol */
+.header .navbar a:hover{
+    color: var(--main-color); /* Change la couleur des liens en couleur principale au survol */
+}
+
+/* Style du bouton menu pour les appareils mobiles */
+#menu-btn{
+    font-size: 2.5rem; /* Taille de police de 2.5rem */
+    cursor: pointer; /* Change le curseur en pointeur pour indiquer que c'est cliquable */
+    color: var(--black); /* Couleur noire pour le bouton menu */
+    display: none; /* Cache le bouton par défaut */
+}
+
+/* Styles pour les écrans de moins de 1200px */
+@media (max-width: 1200px){
+    /* Ajouter des styles spécifiques pour les petits écrans ici */
+    section{
+        padding:3rem 5%;
+
+
+    }
+}
+@media (max-width: 991px){
+    /* Ajouter des styles spécifiques pour les petits écrans ici */
+    section{
+        padding:3rem 2rem;
+        }
+    html{
+        font-size: 55%;
+    }    
+}
+@media (max-width: 450px){
+    /* Ajouter des styles spécifiques pour les petits écrans ici */
+    
+    html{
+        font-size: 50%;
+    }    
+}
+@media (max-width: 768px){
+    .header .navbar{
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        background-color: var(--white);
+        border-top: var(--border);
+        padding:2rem;
+    }   
+    .header .navbar a{
+        display:block;
+        margin: 2rem;
+        text-align: center;
+
+    }
+
+}
